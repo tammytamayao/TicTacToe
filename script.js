@@ -2,7 +2,7 @@
 
 //Alert Player to click new game to start playing at Game Status
 const endgametext = document.querySelector('.endgametext');
-const newgametext = () => 'Press New Game to Start';
+const newgametext = () => 'Press New Game';
 endgametext.innerHTML = newgametext()
 
 //For enabling & disabling cell elements
@@ -97,13 +97,13 @@ let activecell=false;
             row=3;
             column = x - 5;
         }
-        list.innerHTML=`${ul.children.length+1}: Player: ${gameboard[cellindex]} Row: ${row} Column: ${column}`;
+        list.innerHTML=`${ul.children.length+1}- Player: ${gameboard[cellindex]} Row: ${row} Column: ${column}`;
         ul.appendChild(list);
     }
 
 //Setting first player as X and evaluating if there's already a winner
-    const wintext = () => `Player ${currentplayer} won!`;
-    const drawtext = () => 'It is a draw';
+    const wintext = () => `PLAYER ${currentplayer} WINS`;
+    const drawtext = () => 'DRAW';
     function validategameresult(){
         let win=false;
         for(i=0;i<gameboard.length-1;i++){
@@ -170,6 +170,7 @@ let movelist=[];
     let prevvaluehistory=[];
     function prevMove(){
         movelist.push(ul.lastElementChild.innerHTML);
+        console.log(movelist);
         ul.lastElementChild.remove();
         nextBtn.disabled=false;
         let lastmove = previndexhistory[previndexhistory.length-1];
@@ -232,8 +233,9 @@ let movelist=[];
         Oscore.disabled=true;
         prevBtn.disabled=true;
         nextBtn.disabled=true;
+        cellElements.forEach(cell=>cell.classList.remove('disabled'));
         ul.innerHTML='';
-        endgametext.innerHTML = `Now Playing: Player ${currentplayer}`;
+        endgametext.innerHTML = `Now Playing: Player ${playerX}`;
         gameboard = ["", "", "", "", "", "", "", "", ""];
         currentplayer = playerX;
         document.querySelectorAll('.cell').forEach(cell => cell.innerHTML='');
