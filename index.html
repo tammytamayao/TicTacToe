@@ -1,24 +1,44 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css"/>
-</head>
-<body>
-    <div class="board">
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-        <div class="box">6</div>
-        <div class="box">7</div>
-        <div class="box">8</div>
-        <div class="box">9</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/47b7a5fb7b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+    <title>Tic Tac Toe</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+        <h1>Tic Tac Toe </h1>
+        <i class="fa-solid fa-book"></i>
+        <i class="fa-solid fa-pencil"></i>
     </div>
-
-    <script src="tictactoe.js"></script>
-</body>
+    <h3 class="player-turn">Player X</h3>
+    <div id="board">
+      <div data-index="0" class="tile right-border bottom-border"></div>
+      <div data-index="1" class="tile right-border bottom-border"></div>
+      <div data-index="2" class="tile bottom-border"></div>
+      <div data-index="3" class="tile right-border bottom-border"></div>
+      <div data-index="4" class="tile right-border bottom-border"></div>
+      <div data-index="5" class="tile bottom-border"></div>
+      <div data-index="6" class="tile right-border"></div>
+      <div data-index="7" class="tile right-border"></div>
+      <div data-index="8" class="tile"></div>
+      <div id="strike" class="strike"></div>
+    </div>
+    <div id="game-over-area" class="hidden">
+      <h2 id="game-over-text">Winner is X</h2>
+      <div class="board-history"></div>
+      <div class="history-button">
+        <button class="left"><i class="fa-solid fa-angle-left"></i></button>
+        <button class="right"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+      <button id="play-again">Restart</button>
+    </div>
+    <script src="js/tictactoe.js"></script>
+  </body>
 </html>

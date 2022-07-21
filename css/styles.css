@@ -1,14 +1,140 @@
-.board {
-    position: relative;
-    width: 400px;
-    height: 400px;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E7F2F8;
+    color: #FFA384;
+    font-family: 'Nunito', sans-serif;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+i {
+  margin-left: 5px;
+}
+
+.player-turn {
+  margin-bottom: 30px;
+}
+  
+#board {
+  display: grid;
+  grid-template-columns: 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px;
+  cursor: pointer;
+  position: relative;
+}
+
 .box {
-    height: 100%;
-    width: 100%;
-    border: 0.5px solid red;
+  color: currentColor;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-border {
+  border-right: 0.2em solid #74BDCB;
+}
+
+.bottom-border {
+  border-bottom: 0.2em solid #74BDCB;
+}
+
+.strike {
+  position: absolute;
+  background-color: #EFE7BC;
+}
+
+.strike-row-1 {
+  width: 100%;
+  height: 4px;
+  top: 15%;
+}
+.strike-row-2 {
+  width: 100%;
+  height: 4px;
+  top: 48%;
+}
+.strike-row-3 {
+  width: 100%;
+  height: 4px;
+  top: 83%;
+}
+.strike-column-1 {
+  height: 100%;
+  width: 4px;
+  left: 15%;
+}
+.strike-column-2 {
+  height: 100%;
+  width: 4px;
+  left: 48%;
+}
+.strike-column-3 {
+  height: 100%;
+  width: 4px;
+  left: 83%;
+}
+.strike-diagonal-1 {
+  width: 90%;
+  height: 4px;
+  top: 50%;
+  left: 5%;
+  transform: skewY(45deg);
+}
+.strike-diagonal-2 {
+  width: 90%;
+  height: 4px;
+  top: 50%;
+  left: 5%;
+  transform: skewY(-45deg);
+}
+
+#game-over-area {
+  text-align: center;
+  border: #74BDCB 8px solid;
+  border-radius: 20px;
+  padding: 15px;
+  width: 30%;
+  margin-top: 15px;
+}
+
+h2 {
+  color: currentColor;
+  font-size: 2em;
+  margin-top: 0px;
+}
+#play-again {
+  background-color: transparent;
+  color: currentColor;
+  border: currentColor 1px solid;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.5em;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
 }
