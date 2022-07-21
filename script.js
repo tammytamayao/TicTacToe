@@ -77,7 +77,7 @@ let activecell=false;
     previndexhistory.push(gamemove.index);
     prevvaluehistory.push(gamemove.add);
     moves.push(gamemove);
-    //console.log(gameboard);
+    console.log(gameboard);
     addlocalstorage(moves,cellindex);
     }
 
@@ -115,27 +115,26 @@ let activecell=false;
             continue;
         }
         if (a === b && b === c) {
-            win=true;
-            break;
-        } else if (!gameboard.includes('') && a===b && b===c && a===c){
-            win=true;
-            break;
-        } else if (!gameboard.includes('') && a!==b && b!==c && a!==c) {
-            endgametext.innerHTML=drawtext();
-            activecell=false;
-            prevBtn.disabled=false;
-            console.log(a,b,c);
-            return;
+            win = true;
+            break
         }
         }
-        if (win===true){
+        if (win){
             endgametext.innerHTML=wintext();
             activecell=false;
             prevBtn.disabled=false;
             updatescoreboard();
+            return;
         }
-    changeplayer();
-    }
+        let draw = !gameboard.includes("");
+        if (draw){
+            endgametext.innerHTML=drawtext();
+            activecell=false;
+            prevBtn.disabled=false;
+            return;
+        }
+        changeplayer();
+        }
 
 //Updates whose player's turn is currently on game
 function changeplayer(){
@@ -172,7 +171,6 @@ let movelist=[];
     function prevMove(){
         movelist.push(ul.lastElementChild.innerHTML);
         ul.lastElementChild.remove();
-        //console.log(movelist);
         nextBtn.disabled=false;
         let lastmove = previndexhistory[previndexhistory.length-1];
         let lastvalue = prevvaluehistory[prevvaluehistory.length-1];
@@ -204,7 +202,6 @@ let movelist=[];
         list.innerHTML=movelist[movelist.length-1];
         ul.appendChild(list);
         movelist.pop();
-        //console.log(movelist);
         let lastmove = nextindexhistory[nextindexhistory.length-1];
         let lastvalue = nextvaluehistory[nextvaluehistory.length-1];
         const nextgamemove = {
@@ -226,7 +223,7 @@ let movelist=[];
             prevBtn.disabled=false;
         }
         cellElements[lastmove].innerHTML=lastvalue;
-   // console.log(gameboard);
+        console.log(gameboard);
 }
     
 //Clearing game and score board, enabling clickable cells and clearing move history
