@@ -1,0 +1,258 @@
+/**START OF CSS CODE**/
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Cabin:wght@400;500&family=Mina&family=Prompt:wght@200&display=swap');
+    
+    body {
+        background: linear-gradient(180deg, #b68c40 50%, #f5ebd0 100%);
+        padding-top: 150px;
+        padding-bottom: 150px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #title-container {
+        padding: 10px;
+    }
+    #title {
+        background: #f5ebd0;
+        border: 2px solid black;
+        background: #f5ebd0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Permanent Marker", cursive;
+        font-size: 36pt;
+        font-weight: bolder;
+        margin: 0;
+    }
+
+    #container {
+        width: 1000px;
+        height: 400px;
+        margin: auto;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        padding-bottom: 30px;
+        padding-top: 10px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    #body-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .menu-container {
+        display: grid;
+        grid-template-rows: 120px 120px 60px;
+    }
+
+    .gamestatus-container {
+        display: grid;
+        grid-template-rows: 40px 80px;
+    }
+
+    #gamestatus-title,#scoreboard-title {
+        padding-left:5px;
+        margin:0;
+        font-family: "Permanent Marker", cursive;
+        font-weight: bold;
+        font-size: 20pt;
+        border: 2px solid black;
+        background: #f5ebd0;
+        border-radius: 8px;
+    }
+
+    .endgametext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Cabin', sans-serif;
+        font-size: 20pt;
+        font-weight: bold; 
+    }
+
+    .scoreboard-container {
+        display: grid;
+        grid-template-rows: 40px 80px;
+    }
+    .scoreboard-container div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #Xscore, #Oscore {
+        font-size: 24pt;
+        font-family: 'Cabin', sans-serif;
+        border: none;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        text-align: center;
+        color: #b68c40; 
+    }
+    ::placeholder {
+        opacity: 1; /* Firefox */
+        color: #b68c40; 
+    }
+
+    .scoreboard-container label {
+        font-size: 18pt;
+        font-family: 'Cabin', sans-serif;
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+
+    .scoreboard-container input {
+        font-family: "Permanent Marker", cursive;
+        font-size: 24pt;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+    }
+
+    .button-container {
+        display: grid;
+        grid-template-columns: 110px 110px;
+        justify-content: space-around;
+    }
+    .button-container span {
+        display: flex;
+        align-items:flex-end;
+        justify-content: center;
+    }
+
+    .button-container input {
+        height: 70%;
+        width: 100%;
+        border-radius: 5px;
+        border-color: black;
+        color: rgb(0, 0, 0);
+        font-size: 14pt;
+        font-weight: bold;
+        font-family: 'Cabin', sans-serif;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #f5ebd0;
+    }
+    .button-container input:hover{
+        color: #fff;
+	    background: #b68c40;
+    }
+
+    .game-container {
+        display: grid;
+        grid-template-columns: 260px 380px 260px;
+        grid-template-rows: 300px;
+    }
+
+    .board-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #board {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+    }
+
+    .cell {
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 42pt;
+        font-weight:bolder;
+        font-family: "Permanent Marker", cursive;
+        color:#b68c40;
+        cursor: pointer;
+    }
+
+    .cell.disabled {
+        background-color: white;
+        pointer-events: none;
+        cursor: none;
+    }
+
+    .cell:hover{
+        background: #f5ebd0;
+    }
+
+    #history-title {
+        padding-left:5px;
+        margin:0;
+        font-family: "Permanent Marker", cursive;
+        font-weight: bold;
+        font-size: 20pt;
+    }
+    .history-container {
+        display: grid;
+        grid-template-columns: 150px 50px 50px;
+        grid-template-rows: 40px;
+        padding-bottom: 8px;;
+    }
+
+    .history-container label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .history-container input {
+        height: 80%;
+        width: 80%;
+        border-radius: 5px;
+        border-color: black;
+        color: rgb(0, 0, 0);
+        font-size: 16pt;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #f5ebd0;
+    }
+
+    .history-container input:hover {
+        color: white;
+	    background-color: #b68c40;
+    }
+
+    .history-container input:disabled {
+        background: white;
+        color: rgb(0, 0, 0);
+        pointer-events: none;
+    }
+
+    .move-content {
+        display: flex;
+        height: 250px;
+        border-radius: 8px;
+    }
+    #ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;     
+    }
+    li {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        padding:4.2px;
+        font-family: 'Cabin', sans-serif;
+        background: #f5ebd0;
+        font-weight: bold;
+    }
+    footer {
+        font-family: 'Cabin', sans-serif;
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+    }
