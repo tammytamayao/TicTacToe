@@ -104,9 +104,9 @@ let activecell=false;
 //Setting first player as X and evaluating if there's already a winner
     const wintext = () => `Player ${currentplayer} won!`;
     const drawtext = () => 'It is a draw';
-    function validategameresult(cellindex){
-        let i;
-        for(i=0;i<8;i++){
+    function validategameresult(){
+        let win=false;
+        for(i=0;i<gameboard.length-1;i++){
             let a=gameboard[WinCombos[i][0]];
             let b=gameboard[WinCombos[i][1]];
             let c=gameboard[WinCombos[i][2]];
@@ -115,21 +115,33 @@ let activecell=false;
             continue;
         }
         if (a === b && b === c) {
+            win=true;
+            break;
+        } else if (!gameboard.includes('') && a===b && b===c && a===c){
+            win=true;
+            break;
+        } else if (!gameboard.includes('') && a!==b && b!==c && a!==c) {
+            endgametext.innerHTML=drawtext();
+            activecell=false;
+            prevBtn.disabled=false;
+            console.log(a,b,c);
+            return;
+        }
+        }
+        if (win===true){
             endgametext.innerHTML=wintext();
             activecell=false;
             prevBtn.disabled=false;
             updatescoreboard();
-            return;
-            } 
-        if (!gameboard.includes('') && (a!==b && b!==c)){
-            endgametext.innerHTML=drawtext();
-            activecell=false;
-            prevBtn.disabled=false;
-            return;
-        }
         }
     changeplayer();
     }
+
+//Updates whose player's turn is currently on game
+function changeplayer(){
+    currentplayer = currentplayer === playerX ? playerO : playerX;
+    endgametext.innerHTML = `Now Playing: Player ${currentplayer}`;
+}
 
 //Updating Scoreboard of players every end of game
 const Xscore=document.getElementById('Xscore');
@@ -142,18 +154,10 @@ function updatescoreboard(){
     if (currentplayer===playerX){
         addXscore++;
         Xscore.value=addXscore;
-        console.log('Score X:' +addXscore);
     } else if (currentplayer===playerO){
         addOscore++;
         Oscore.value=addOscore;
-        console.log('Score O:' +addOscore);
     }
-    }
-
-//Updates whose player's turn is currently on game
-    function changeplayer(){
-        currentplayer = currentplayer === playerX ? playerO : playerX;
-        endgametext.innerHTML = `Now Playing: Player ${currentplayer}`;
     }
 
 //Initialize previous and next button before a game
@@ -168,7 +172,7 @@ let movelist=[];
     function prevMove(){
         movelist.push(ul.lastElementChild.innerHTML);
         ul.lastElementChild.remove();
-        console.log(movelist);
+        //console.log(movelist);
         nextBtn.disabled=false;
         let lastmove = previndexhistory[previndexhistory.length-1];
         let lastvalue = prevvaluehistory[prevvaluehistory.length-1];
@@ -200,7 +204,7 @@ let movelist=[];
         list.innerHTML=movelist[movelist.length-1];
         ul.appendChild(list);
         movelist.pop();
-        console.log(movelist);
+        //console.log(movelist);
         let lastmove = nextindexhistory[nextindexhistory.length-1];
         let lastvalue = nextvaluehistory[nextvaluehistory.length-1];
         const nextgamemove = {
