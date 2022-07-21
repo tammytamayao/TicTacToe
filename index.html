@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic-Tac-Toe Game - Tamayao</title>
+<link rel="stylesheet" href='style.css'>
+</head>
+<body>
+<div id="container">
+    <div id="title-container"><p id="title">TIC-TAC-TOE</p></div>
+<div id="body-container">
+<div class="game-container">
+    <div class="menu-container">
+        <section class="gamestatus-container">
+            <span><p id="gamestatus-title">Game Status</p></span>
+            <span id="gamestatus-border"><p class="endgametext"></p></span>
+        </section>
+
+        <section class="scoreboard-container">
+            <p id="scoreboard-title">Score Board</p>
+            <span id="scoreboard-border">
+            <div><label>Player X </label><input id="Xscore" placeholder="0"></div>
+            <div><label>Player O </label><input id="Oscore" placeholder="0"></div>
+            </span>
+        </section>
+
+        <section class="button-container">
+            <span><input type="button" value="New Game" id="NewGameBtn"></span>
+            <span><input type="button" value="Exit Game" id="ExitGameBtn"></span>
+        </section>
+    </div>
+
+    <div class="board-container">
+        <section id="board">
+            <div class="cell disabled" data-cell-index="0"></div>
+            <div class="cell disabled" data-cell-index="1"></div>
+            <div class="cell disabled" data-cell-index="2"></div>
+            <div class="cell disabled" data-cell-index="3"></div>
+            <div class="cell disabled" data-cell-index="4"></div>
+            <div class="cell disabled" data-cell-index="5"></div>
+            <div class="cell disabled" data-cell-index="6"></div>
+            <div class="cell disabled" data-cell-index="7"></div>
+            <div class="cell disabled" data-cell-index="8"></div>
+        </section>
+    </div>
+
+    <div>
+        <section class="history-container">
+            <p id="history-title">Moves</p>
+            <label><input type="button" value="<<" id="prevBtn"></label>
+            <label><input type="button" value=">>" id="nextBtn"></label>
+        </section>
+        <section class="move-content">
+            <ul id="ul"></ul>
+        </section>
+    </div>
+</div>
+</div>
+</div>
+<footer>Princess Connie C. Tamayao - Avion School Batch 21</footer>
+<script src="script.js"></script>
+</body>
+</html>
