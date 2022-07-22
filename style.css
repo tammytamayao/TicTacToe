@@ -4,7 +4,7 @@
     
     body {
         background: linear-gradient(180deg, #b68c40 50%, #f5ebd0 100%);
-        padding-top: 150px;
+        padding-top: 120px;
         padding-bottom: 150px;
         background-position: center;
         background-repeat: no-repeat;
@@ -17,6 +17,7 @@
     #title {
         background: #f5ebd0;
         border: 2px solid black;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.10);
         background: #f5ebd0;
         border-radius: 8px;
         display: flex;
@@ -32,7 +33,7 @@
         width: 1000px;
         height: 400px;
         margin: auto;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.45);
         padding-bottom: 30px;
         padding-top: 10px;
         background-color: white;
@@ -62,6 +63,7 @@
         font-weight: bold;
         font-size: 20pt;
         border: 2px solid black;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         background: #f5ebd0;
         border-radius: 8px;
     }
@@ -144,6 +146,7 @@
     .button-container input:hover{
         color: #fff;
 	    background: #b68c40;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     }
 
     .game-container {
@@ -184,6 +187,7 @@
 
     .cell:hover{
         background: #f5ebd0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.35);
     }
 
     #history-title {
@@ -223,12 +227,14 @@
     .history-container input:hover {
         color: white;
 	    background-color: #b68c40;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     }
 
     .history-container input:disabled {
         background: white;
         color: rgb(0, 0, 0);
         pointer-events: none;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
 
     .move-content {
@@ -249,6 +255,7 @@
         font-family: 'Cabin', sans-serif;
         background: #f5ebd0;
         font-weight: bold;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
     footer {
         font-family: 'Cabin', sans-serif;
