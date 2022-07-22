@@ -123,6 +123,7 @@ let activecell=false;
             endgametext.innerHTML=wintext();
             activecell=false;
             prevBtn.disabled=false;
+            cellElements.forEach(cell=>cell.classList.add('disabled'));
             updatescoreboard();
             return;
         }
@@ -131,6 +132,7 @@ let activecell=false;
             endgametext.innerHTML=drawtext();
             activecell=false;
             prevBtn.disabled=false;
+            cellElements.forEach(cell=>cell.classList.add('disabled'));
             return;
         }
         changeplayer();
