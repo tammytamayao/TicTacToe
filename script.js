@@ -172,7 +172,7 @@ let movelist=[];
     let prevvaluehistory=[];
     function prevMove(){
         movelist.push(ul.lastElementChild.innerHTML);
-        console.log(movelist);
+        console.log(gameboard);
         ul.lastElementChild.remove();
         nextBtn.disabled=false;
         let lastmove = previndexhistory[previndexhistory.length-1];
