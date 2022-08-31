@@ -1,11 +1,12 @@
 /**START OF CSS CODE**/
 
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Cabin:wght@400;500&family=Mina&family=Prompt:wght@200&display=swap');
-    
+
+/* General Container */
     body {
         background: linear-gradient(180deg, #b68c40 50%, #f5ebd0 100%);
-        padding-top: 120px;
-        padding-bottom: 200px;
+        padding-top: 100px;
+        height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -29,6 +30,8 @@
         margin: 0;
     }
 
+/* Game Container */
+
     #container {
         width: 1000px;
         height: 400px;
@@ -37,7 +40,7 @@
         padding-bottom: 30px;
         padding-top: 10px;
         background-color: white;
-        border-radius: 5px;
+        border-radius: 15px;
     }
 
     #body-container{
@@ -50,6 +53,8 @@
         display: grid;
         grid-template-rows: 120px 120px 60px;
     }
+
+/* Game Status*/
 
     .gamestatus-container {
         display: grid;
@@ -76,6 +81,8 @@
         font-size: 20pt;
         font-weight: bold; 
     }
+
+/* Scoreboard */
 
     .scoreboard-container {
         display: grid;
@@ -118,6 +125,8 @@
         justify-content: center;
     }
 
+/* New and Exit Game */
+
     .button-container {
         display: grid;
         grid-template-columns: 110px 110px;
@@ -148,6 +157,8 @@
 	    background: #b68c40;
         box-shadow: 0 5px 10px rgba(0,0,0,0.3);
     }
+
+/* Cell board */
 
     .game-container {
         display: grid;
@@ -189,6 +200,8 @@
         background: #f5ebd0;
         box-shadow: 0 5px 10px rgba(0,0,0,0.35);
     }
+
+/* Moves and History */
 
     #history-title {
         padding-left:5px;
@@ -257,6 +270,84 @@
         font-weight: bold;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
+    
+/* Modal */
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 30%;
+        border-radius: 7px;
+    }
+
+    .modal-content label {
+        font-size: 24pt;
+        font-family: "Permanent Marker", cursive;
+        font-weight: bold;
+    }  
+
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 18pt;
+        font-family: "Permanent Marker", cursive;
+        font-weight: bold;
+    }
+  
+    .close:hover,.close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+    #playerXBtn, #playerOBtn {
+        border-radius: 5px;
+        border-color: black;
+        color: rgb(0, 0, 0);
+        font-size: 16pt;
+        font-weight: bold;
+        font-family: 'Cabin', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #f5ebd0;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .playerXBtn, .playerOBtn {
+        padding: 10px 5px;
+    }
+
+    #playerXBtn:hover, #playerOBtn:hover {
+        color: #fff;
+        background: #b68c40;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .player-btn {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+/* Footer */
+
     footer {
         font-family: 'Cabin', sans-serif;
         display: flex;

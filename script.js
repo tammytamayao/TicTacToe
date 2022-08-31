@@ -228,9 +228,28 @@ let movelist=[];
         cellElements[lastmove].innerHTML=lastvalue;
         console.log(gameboard);
 }
-    
+ 
+
+// Modal Buttons, Elements and Event Listeners
+const modal = document.getElementById("myModal");
+const close = document.getElementsByClassName("close")[0];
+const playerXBtn = document.getElementById("playerXBtn");
+const playerOBtn = document.getElementById("playerOBtn");
+
+close.addEventListener('click',closeModalBtn);
+playerXBtn.addEventListener('click',playerXModalBtn);
+playerOBtn.addEventListener('click',playerOModalBtn);
+
 //Clearing game and score board, enabling clickable cells and clearing move history
     function NewGame(){
+        modal.style.display = "block";
+    }
+
+//Chooose Player 1 buttons
+
+    function playerXModalBtn () {
+        modal.style.display = "none";
+
         Xscore.disabled=true;
         Oscore.disabled=true;
         prevBtn.disabled=true;
@@ -250,6 +269,43 @@ let movelist=[];
         nextvaluehistory=[];
         movelist=[];
         console.clear();
+
+    }
+
+    function playerOModalBtn () {
+        modal.style.display = "none";
+
+        Xscore.disabled=true;
+        Oscore.disabled=true;
+        prevBtn.disabled=true;
+        nextBtn.disabled=true;
+        cellElements.forEach(cell=>cell.classList.remove('disabled'));
+        ul.innerHTML='';
+        endgametext.innerHTML = `Now Playing: Player ${playerO}`;
+        gameboard = ["", "", "", "", "", "", "", "", ""];
+        currentplayer = playerO;
+        document.querySelectorAll('.cell').forEach(cell => cell.innerHTML='');
+        cellElements.forEach(cell => cell.addEventListener('click',clickedcell));
+        activecell=true;
+        localStorage.removeItem('moves');
+        previndexhistory=[];
+        prevvaluehistory=[];
+        nextindexhistory=[];
+        nextvaluehistory=[];
+        movelist=[];
+        console.clear();
+
+    }
+
+// Close the modal when x is clicked and when clicked outside
+    function closeModalBtn () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            }
     }
 
 //Exit browser when clicked
